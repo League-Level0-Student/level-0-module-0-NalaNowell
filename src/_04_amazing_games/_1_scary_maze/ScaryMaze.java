@@ -125,58 +125,58 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 	
 	/**********  DO NOT CHANGE THE CODE BELOW THIS LINE ***************/
 	
-	//private void playScarySound(String soundName) {
-		//File sound = new File("src/_04_amazing_games/_1_scary_maze/"+soundName);
-		//if (sound.exists()) {
-			//try {
-			//	Clip clip = AudioSystem.getClip();
-			//	clip.open(AudioSystem.getAudioInputStream(sound));
-			//	clip.start();
-			//	Thread.sleep(clip.getMicrosecondLength()/1000);
-		//	}
-		//	catch (Exception e) {
-		//		System.out.println("Could not play this sound");
-//			}
- //		}
-//		else {
-//			System.out.println("File does not exist");
-//		}
-//	}
+	private void playScarySound(String soundName) {
+		File sound = new File("src/_04_amazing_games/_1_scary_maze/"+soundName);
+		if (sound.exists()) {
+			try {
+				Clip clip = AudioSystem.getClip();
+				clip.open(AudioSystem.getAudioInputStream(sound));
+				clip.start();
+				Thread.sleep(clip.getMicrosecondLength()/1000);
+			}
+			catch (Exception e) {
+				System.out.println("Could not play this sound");
+			}
+ 		}
+		else {
+			System.out.println("File does not exist");
+		}
+	}
 
-//	private void showScaryImage(String imageName) {
-//		try {
-//			maze = ImageIO.read(getClass().getResource(imageName));
-//		} catch (Exception e) {
-//			System.err.println("Could not find this image: " + imageName);
-//		}
-//		repaint();
-//	}
+	private void showScaryImage(String imageName) {
+		try {
+			maze = ImageIO.read(getClass().getResource(imageName));
+		} catch (Exception e) {
+			System.err.println("Could not find this image: " + imageName);
+		}
+		repaint();
+	}
 
-//	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {
 		SwingUtilities.invokeLater(new ScaryMaze());
-//	}
+	}
 
-//	@Override
-//	public void run() {
-//		JFrame frame = new JFrame("Scary Maze");
-//		frame.add(this);
-//		setPreferredSize(new Dimension(frameWidth, frameHeight));
-//		frame.pack();
-//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		frame.setResizable(false);
-//		frame.setVisible(true);
+	@Override
+	public void run() {
+		JFrame frame = new JFrame("Scary Maze");
+		frame.add(this);
+		setPreferredSize(new Dimension(frameWidth, frameHeight));
+		frame.pack();/		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setVisible(true);
 
-//	}
+	}
 
-//	@Override
-//	public void paintComponent(Graphics g) {
+	@Override
+	public void paintComponent(Graphics g) {
 		g.drawImage(maze, 0, 0, null);
 	}
 
-//	@Override
-//   public void mouseDragged(MouseEvent e) {}
+	@Override
+   public void mouseDragged(MouseEvent e) {}
 
-//}
+}
 
 
 
