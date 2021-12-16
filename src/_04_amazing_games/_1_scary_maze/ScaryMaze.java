@@ -161,7 +161,7 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		JFrame frame = new JFrame("Scary Maze");
 		frame.add(this);
 		setPreferredSize(new Dimension(frameWidth, frameHeight));
-		frame.pack();/		
+		frame.pack();	
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setVisible(true);
