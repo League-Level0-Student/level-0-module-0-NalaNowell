@@ -13,13 +13,13 @@ int x=0;
 int y=0;
 
 void setup() {
-  
+ sketch = loadImage ("cat.jpg");
 // 2. The code below loads your cat picture into the program. 
 //     Make sure the file name is correct for the cat image you saved earlier
 cat = loadImage("cat.jpg");
   
 // 3. Set the size of the sketch. Make it big enough to show the cat you chose.
-
+	int catSize= 225;
 // 4. Resize the cat so it is the same size as the sketch
 
 // 5. DRAW CAT.    Use the background() command to make the cat the background of the sketch
