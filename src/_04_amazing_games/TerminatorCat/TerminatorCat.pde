@@ -9,8 +9,8 @@
 // This line of code creates a variable to hold your faccate picture
 // You will use it later.
 PImage cat;
-int x=0;
-int y=0;
+int x=63;
+int y=72;
 
 void setup() {
  
@@ -34,8 +34,14 @@ void draw() {
 //    You can use this to find the x and y for the center of the cat's eyes.
       if(mousePressed){
           println("Mouse’s x-position: " + mouseX + "\n" + "Mouse’s y-position: " + mouseY + "\n");
+         
       }
-
+  if(x<-20){
+    background(cat);
+    x=63;
+    y=72;
+  }
+    
 // 7. Run the program and click on one of the cat's eyes. 
 //    The x,y position of the eye will be printed at the bottom of your processing window. 
 //    Variables for x and y have been created at the top of your sketch, 
@@ -43,16 +49,16 @@ void draw() {
 
 // 8. DRAW CIRCLES.
 //     The circles will have black lines around them by default. Put noStroke(); here to remove them.
-
+noStroke();
 // 9.  COLOR.  Set the color of your ellipse to the laser color you would like
 //    Remember to use the   fill()  command to set colors.
-
+fill(#ED070B);
 
 // 10 Use the ellipse() command to draw a circle on the eye (you will have to guess its size). 
 //    Use the x and y variables you just created to place the ellipse in the correct location.
 //                  The ellipse command looks like this:
-                ellipse(139, 89, 40, 40);
-                ellipse(68, 73, 40, 40);
+                ellipse(x+71, y+17, 40, 40);
+                ellipse(x, y, 40, 40);
 // Run the program to make sure it is in the right place and is the right size.
 }
 
@@ -60,8 +66,8 @@ void draw() {
 //      the space bar. Run the program to test it.
 //      If you want it to move to the left, change to x-1=.
 void keyPressed() {
-    x+=1;
-    y+=1;
+    x-=3;
+    y+=3;
     
 // 12.  If you want them to go faster, add more than one each time the key is pressed    
 }
@@ -76,3 +82,5 @@ void keyPressed() {
 //     You will need  an if statement to check when x > width 
 //     Then set x and y back to their original values and re-draw the cat
 //     background(cat);
+
+  
